@@ -206,8 +206,7 @@ class VertBrush {
         let directionalLightColor: vector_float3 = vector3(0.6, 0.6, 0.6)
         uniforms.directionalLightColor = directionalLightColor * ambientIntensity
         
-        uniforms.materialShininess = 40
-        
+        uniforms.materialShininess = 800
     }
     
     
@@ -292,4 +291,22 @@ class VertBrush {
     }
     
     
+}
+
+extension ARSCNView {
+
+    func setup() { //SCENE SETUP
+        antialiasingMode = .multisampling4X
+        autoenablesDefaultLighting = true
+        preferredFramesPerSecond = 60
+        contentScaleFactor = 1.3
+
+        if let camera = pointOfView?.camera {
+            camera.wantsHDR = true
+            camera.wantsExposureAdaptation = true
+            camera.exposureOffset = -1
+            camera.minimumExposure = -1
+            camera.maximumExposure = 3
+        }
+    }
 }

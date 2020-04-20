@@ -21,6 +21,8 @@
 		42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BA3DC01EFECAA700A4039A /* stop@2x.png */; };
 		42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */; };
 		C426CC9D2418146B008F9E57 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426CC9C2418146B008F9E57 /* CreditsViewController.swift */; };
+		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
+		C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4656191244D3AEA00BE0B61 /* NodeRender.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
 		C426CC9C2418146B008F9E57 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
+		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */,
 				42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */,
+				C4656191244D3AEA00BE0B61 /* NodeRender.metal */,
+				C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */,
 				425175391EFDA85F00C6DD2B /* Shaders.metal */,
 				425175361EFDA1B200C6DD2B /* SCNVector3Extensions.swift */,
 				425175351EFDA1B200C6DD2B /* float4x4+Extensions.swift */,
@@ -176,6 +182,7 @@
 				4251752B1EFD9CB700C6DD2B /* LaunchScreen.storyboard in Resources */,
 				425175281EFD9CB700C6DD2B /* Assets.xcassets in Resources */,
 				425175261EFD9CB700C6DD2B /* Main.storyboard in Resources */,
+				C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +201,7 @@
 				4251751F1EFD9CB700C6DD2B /* AppDelegate.swift in Sources */,
 				425175381EFDA76A00C6DD2B /* float4x4+Extensions.swift in Sources */,
 				425175371EFDA76700C6DD2B /* SCNVector3Extensions.swift in Sources */,
+				C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,13 +343,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
@@ -355,12 +363,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2;
+				MARKETING_VERSION = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;

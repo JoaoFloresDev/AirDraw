@@ -12,7 +12,7 @@ import ARKit
 import simd
 import Photos
 import StoreKit
-
+import Foundation
 //cool sounds
 //var vet = [1003, 1019, 1100, 1103, 1104,1108, 1130, 1163]
 var i = 1100
@@ -86,19 +86,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     var hasSetupPipeline = false
     
     var videoRecorder : MetalVideoRecorder? = nil
-    
     var tempVideoUrl : URL? = nil
-    
     var recordingOrientation : UIInterfaceOrientationMask? = nil
-    
     enum ColorMode : Int {
         case color
         case normal
         case rainbow
         case black
+        case light
     }
     
-    var currentColor : SCNVector3 = SCNVector3(200,0.5,100)
+    var currentColor : SCNVector3 = SCNVector3(100,0.5,100)
     var colorMode : ColorMode = .rainbow
     
     var avgPos : SCNVector3! = nil
@@ -167,7 +165,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
             if buttonDown {
                 self.touchLocation = gesture.location(in: self.sceneView)
             }
-            
         }
     }
     
@@ -211,7 +208,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     @IBAction func changeColor(_ sender: Any) {
         AudioServicesPlaySystemSound(SystemSoundID(1104))
         AudioServicesPlaySystemSound(SystemSoundID(1520))
-        self.colorMode = ColorMode(rawValue: (self.colorMode.rawValue + 1) % 4)!
+        self.colorMode = ColorMode(rawValue: (self.colorMode.rawValue + 1) % 5)!
         
         if let button : UIButton = sender as? UIButton
         {
@@ -225,10 +222,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
                 
             case .color:
                 //                    chiclete
-                button.setImage(UIImage(named: "pinkColor.png")!, for: .normal)
+                button.setImage(UIImage(named: "redColor.png")!, for: .normal)
                 
             case .black:
                 button.setImage(UIImage(named: "blackColor.png")!, for: .normal)
+                
+            case .light:
+            button.setImage(UIImage(named: "yellowLight.png")!, for: .normal)
             }
         }
     }
@@ -304,6 +304,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         optionMenu.addAction(cancel)
         
         self.present(optionMenu, animated: true, completion: nil)
+        
+        
     }
     
     func plotImage (image: UIImage, size: CGFloat) {
@@ -339,7 +341,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         }
         
         imagePlane.firstMaterial?.diffuse.contents = image
-        
         imagePlane.firstMaterial?.lightingModel = .constant
         imagePlane.firstMaterial?.isDoubleSided = true
         
@@ -442,12 +443,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     }
     // MARK: - ARSCNViewDelegate
     
-    func addBall( _ pos : SCNVector3 ) {
+    func addBall( _ pos : SCNVector3 ) -> SCNNode{
         let b = SCNSphere(radius: 0.01)
         b.firstMaterial?.diffuse.contents = UIColor.red
         let n = SCNNode(geometry: b)
         n.worldPosition = pos
         self.sceneView.scene.rootNode.addChildNode(n)
+        return n
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -489,7 +491,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
                     case .rainbow:
                         
                         let hue : CGFloat = CGFloat(fmodf(Float(vertBrush.points.count) / 30.0, 1.0))
-                        let c = UIColor.init(hue: hue, saturation: 0.95, brightness: 0.95, alpha: 1.0)
+                        let c = UIColor.init(hue: hue, saturation: 0.95, brightness: 0.5, alpha: 1.0)
                         var red : CGFloat = 0.0; var green : CGFloat = 0.0; var blue : CGFloat = 0.0;
                         c.getRed(&red, green: &green, blue: &blue, alpha: nil)
                         color = SCNVector3(red, green, blue)
@@ -497,9 +499,49 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
                     case .normal:
                         color = SCNVector3(-1, -1, -1)
                         
+                    
+                    case .light:
+                        lineRadius = 0
+                        
+                        let hue : CGFloat = CGFloat(fmodf(10, 0.5))
+                        let c = UIColor.init(hue: hue, saturation: 0.5, brightness: 10, alpha: 0.8)
+                        var red : CGFloat = 0.0
+                        var green : CGFloat = 0.0
+                        var blue : CGFloat = 0.0
+                        c.getRed(&red, green: &green, blue: &blue, alpha: nil)
+                        color = SCNVector3(red, green, blue)
+                        
+                        let b = SCNSphere(radius: 0.005)
+                        b.firstMaterial?.diffuse.contents = UIColor.white
+                        
+                        let n = SCNNode(geometry: b)
+                        n.worldPosition = avgPos
+                        self.sceneView.scene.rootNode.addChildNode(n)
+                        
+                        self.addGlowTechnique(node: n, sceneView: sceneView)
+                        
+                        if let path = Bundle.main.path(forResource: "NodeTechnique", ofType: "plist") {
+                            if let dict = NSDictionary(contentsOfFile: path)  {
+                                let dict2 = dict as! [String : AnyObject]
+                                let technique = SCNTechnique(dictionary:dict2)
+
+                                let color = SCNVector3(1.0, 1.0, 0.0)
+                                technique?.setValue(NSValue(scnVector3: color), forKeyPath: "glowColorSymbol")
+                                self.sceneView.technique = technique
+                            }
+                        }
+                        
                     case .color:
-                        lineRadius = 0.004
-                        color = self.currentColor
+                        lineRadius = 0.003
+                        
+                        let hue : CGFloat = CGFloat(fmodf(100, 10))
+                        let c = UIColor.init(hue: hue, saturation: 10, brightness: 0.5, alpha: 0.8)
+                        var red : CGFloat = 0.5
+                        var green : CGFloat = 0.0
+                        var blue : CGFloat = 0.0
+                        c.getRed(&red, green: &green, blue: &blue, alpha: nil)
+                        color = SCNVector3(red, green, blue)
+                        
                         
                     case .black:
                         lineRadius = 0.001
@@ -607,5 +649,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     override var preferredStatusBarStyle: UIStatusBarStyle {
         
         return .lightContent
+    }
+}
+
+extension ViewController {
+    public func addGlowTechnique(node:SCNNode ,sceneView:ARSCNView){
+        node.categoryBitMask = 2;
+        if let path = Bundle.main.path(forResource: "NodeTechnique", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path)  {
+                let dict2 = dict as! [String : AnyObject]
+                let technique = SCNTechnique(dictionary:dict2)
+                sceneView.technique = technique
+            }
+        }
     }
 }
