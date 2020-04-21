@@ -491,7 +491,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
                     case .rainbow:
                         
                         let hue : CGFloat = CGFloat(fmodf(Float(vertBrush.points.count) / 30.0, 1.0))
-                        let c = UIColor.init(hue: hue, saturation: 0.95, brightness: 0.5, alpha: 1.0)
+                        let c = UIColor.init(hue: hue, saturation: 0.95, brightness: 1, alpha: 1.0)
                         var red : CGFloat = 0.0; var green : CGFloat = 0.0; var blue : CGFloat = 0.0;
                         c.getRed(&red, green: &green, blue: &blue, alpha: nil)
                         color = SCNVector3(red, green, blue)
