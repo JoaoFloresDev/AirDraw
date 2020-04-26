@@ -303,15 +303,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
             self.plotImage (image: self.imageView, size: 1, cornerRadius: 1)
         })
         
-        let GoOrdemDasCartas = UIAlertAction(title: "x 5", style: .default, handler: { (action) -> Void in
+        let GoOrdemDasCartas = UIAlertAction(title: "x 2", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 2, cornerRadius: 1)
+        })
+        
+        let EditAction = UIAlertAction(title: "x 4", style: .default, handler: { (action) -> Void in
             self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
         })
         
-        let EditAction = UIAlertAction(title: "x 10", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
+        let EditAction2 = UIAlertAction(title: "x 8", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 8, cornerRadius: 1)
         })
         
-        let EditAction2 = UIAlertAction(title: "x 15", style: .default, handler: { (action) -> Void in
+        let EditAction3 = UIAlertAction(title: "x 12", style: .default, handler: { (action) -> Void in
             self.plotImage (image: self.imageView, size: 12, cornerRadius: 1)
         })
         
@@ -323,6 +327,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         optionMenu.addAction(GoOrdemDasCartas)
         optionMenu.addAction(EditAction)
         optionMenu.addAction(EditAction2)
+        optionMenu.addAction(EditAction3)
         optionMenu.addAction(cancel)
         
         self.present(optionMenu, animated: true, completion: nil)
@@ -367,7 +372,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         imagePlane.cornerRadius = CGFloat(image.size.height * size / 100000 * cornerRadius)
         let planeNode = SCNNode(geometry: imagePlane)
         
-        var translation = SCNMatrix4Translate(SCNMatrix4Identity, 0, 0, -1)
+        var translation = SCNMatrix4Translate(SCNMatrix4Identity, 0, 0, -1.3)
         
         translation = SCNMatrix4Rotate(translation, GLKMathDegreesToRadians(angle), 0, 0, 1)
         
