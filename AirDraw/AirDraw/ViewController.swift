@@ -67,8 +67,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     //    MARK: - IBOutlet
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tutorialAsset: UIButton!
+    @IBOutlet weak var tutorialImage: UIImageView!
     
     //    MARK: - Variables
+    var timerTutotial: Timer!
     var imagePicker: UIImagePickerController!
     let vertBrush = VertBrush()
     var buttonDown = false
@@ -126,6 +128,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
             print(status)
         }
         
+        self.timerTutotial = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.animateGestureTap), userInfo: nil, repeats: true)
+    }
+    
+    @objc func animateGestureTap() {
+        if(tutorialImage.image == (UIImage(named: "twoTapImg1"))) {tutorialImage.image = (UIImage(named: "twoTapImg2")) }
+        else if (tutorialImage.image == (UIImage(named: "twoTapImg2"))) { tutorialImage.image = (UIImage(named: "twoTapImg3")) }
+        else { tutorialImage.image = (UIImage(named: "twoTapImg1")) }
     }
     
     func rateApp() {
@@ -241,12 +250,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         for x in sceneView.scene.rootNode.childNodes {
             x.removeFromParentNode()
         }
-        
-        if(UserDefaults.standard.bool(forKey: "noFirstUse")) {
-            rateApp()
-        } else {
-            UserDefaults.standard.set (true, forKey: "noFirstUse")
-        }
     }
     
     @IBAction func screenShot(_ sender: Any) {
@@ -254,7 +257,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     }
     
     @IBAction func tutorial(_ sender: Any) {
+        
+        timerTutotial.invalidate()
+        
         tutorialAsset.removeFromSuperview()
+        tutorialImage.removeFromSuperview()
+        let tutu = UIImage(named: "tutu")
+        self.plotImage (image: tutu!, size: 1, cornerRadius: 0)
     }
     
     //    MARK: - PLOT IMAGE FUNCTIONS
@@ -279,19 +288,31 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         showMenu()
     }
     
+    func cropBounds(viewlayer: CALayer, cornerRadius: Float) {
+        
+        let imageLayer = viewlayer
+        imageLayer.cornerRadius = CGFloat(cornerRadius)
+        imageLayer.masksToBounds = true
+    }
+    
     func showMenu() {
+        
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let ResetGame = UIAlertAction(title: "x 1", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 1)
+            self.plotImage (image: self.imageView, size: 1, cornerRadius: 1)
         })
         
-        let GoOrdemDasCartas = UIAlertAction(title: "x 2", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 2)
+        let GoOrdemDasCartas = UIAlertAction(title: "x 5", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
         })
         
-        let EditAction = UIAlertAction(title: "x 4", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 3)
+        let EditAction = UIAlertAction(title: "x 10", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
+        })
+        
+        let EditAction2 = UIAlertAction(title: "x 15", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 12, cornerRadius: 1)
         })
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
@@ -301,6 +322,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         optionMenu.addAction(ResetGame)
         optionMenu.addAction(GoOrdemDasCartas)
         optionMenu.addAction(EditAction)
+        optionMenu.addAction(EditAction2)
         optionMenu.addAction(cancel)
         
         self.present(optionMenu, animated: true, completion: nil)
@@ -308,11 +330,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         
     }
     
-    func plotImage (image: UIImage, size: CGFloat) {
+    func plotImage (image: UIImage, size: CGFloat, cornerRadius: CGFloat) {
         guard let currentFrame = sceneView.session.currentFrame else {
             return
         }
-        
         
         var imagePlane = SCNPlane(width: image.size.width * size / 4000,
                                   height: image.size.height * size / 4000)
@@ -343,10 +364,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         imagePlane.firstMaterial?.diffuse.contents = image
         imagePlane.firstMaterial?.lightingModel = .constant
         imagePlane.firstMaterial?.isDoubleSided = true
-        
+        imagePlane.cornerRadius = CGFloat(image.size.height * size / 100000 * cornerRadius)
         let planeNode = SCNNode(geometry: imagePlane)
         
-        var translation = SCNMatrix4Translate(SCNMatrix4Identity, 0, 0, -0.5)
+        var translation = SCNMatrix4Translate(SCNMatrix4Identity, 0, 0, -1)
         
         translation = SCNMatrix4Rotate(translation, GLKMathDegreesToRadians(angle), 0, 0, 1)
         
@@ -637,13 +658,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func cropBounds(viewlayer: CALayer, cornerRadius: Float) {
-        
-        let imageLayer = viewlayer
-        imageLayer.cornerRadius = CGFloat(cornerRadius)
-        imageLayer.masksToBounds = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
