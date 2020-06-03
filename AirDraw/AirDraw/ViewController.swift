@@ -15,7 +15,7 @@ import StoreKit
 import Foundation
 //cool sounds
 //var vet = [1003, 1019, 1100, 1103, 1104,1108, 1130, 1163]
-var i = 1100
+
 func getRoundyButton(size: CGFloat = 100,
                      imageName : String,
                      _ colorTop : UIColor ,
@@ -254,6 +254,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     
     @IBAction func screenShot(_ sender: Any) {
         catchVideo(sender)
+        
     }
     
     @IBAction func tutorial(_ sender: Any) {

@@ -1,0 +1,6 @@
+framework module Pods_Air_Draw {
+  umbrella header "Pods-Air Draw-umbrella.h"
+
+  export *
+  module * { export * }
+}

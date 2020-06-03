@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1981A82C0B0532D57420A8DC /* Pods_Air_Draw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D5F47D5765A6C91FFB9789 /* Pods_Air_Draw.framework */; };
 		4251751F1EFD9CB700C6DD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */; };
 		425175211EFD9CB700C6DD2B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 425175201EFD9CB700C6DD2B /* art.scnassets */; };
 		425175231EFD9CB700C6DD2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425175221EFD9CB700C6DD2B /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		078409FF3E5DA08BCA3CEF63 /* Pods-Air Draw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Air Draw.release.xcconfig"; path = "Target Support Files/Pods-Air Draw/Pods-Air Draw.release.xcconfig"; sourceTree = "<group>"; };
 		4251751B1EFD9CB700C6DD2B /* Air Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Draw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		425175201EFD9CB700C6DD2B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
+		67D5F47D5765A6C91FFB9789 /* Pods_Air_Draw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Air_Draw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D348C0C6E46D070CE5F5E83 /* Pods-Air Draw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Air Draw.debug.xcconfig"; path = "Target Support Files/Pods-Air Draw/Pods-Air Draw.debug.xcconfig"; sourceTree = "<group>"; };
 		C426CC9C2418146B008F9E57 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
 		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
@@ -53,18 +57,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1981A82C0B0532D57420A8DC /* Pods_Air_Draw.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		138B40E3C872C710EAE96B9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67D5F47D5765A6C91FFB9789 /* Pods_Air_Draw.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		425175121EFD9CB700C6DD2B = {
 			isa = PBXGroup;
 			children = (
 				42FB5BAF23D7AFF900B53DBD /* AirDraw.h */,
 				4251751D1EFD9CB700C6DD2B /* AirDraw */,
 				4251751C1EFD9CB700C6DD2B /* Products */,
+				FE0793137174F458FF6F9A79 /* Pods */,
+				138B40E3C872C710EAE96B9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +132,16 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		FE0793137174F458FF6F9A79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D348C0C6E46D070CE5F5E83 /* Pods-Air Draw.debug.xcconfig */,
+				078409FF3E5DA08BCA3CEF63 /* Pods-Air Draw.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4251752F1EFD9CB700C6DD2B /* Build configuration list for PBXNativeTarget "Air Draw" */;
 			buildPhases = (
+				74F28446D8923523E11873FB /* [CP] Check Pods Manifest.lock */,
 				425175171EFD9CB700C6DD2B /* Sources */,
 				425175181EFD9CB700C6DD2B /* Frameworks */,
 				425175191EFD9CB700C6DD2B /* Resources */,
+				446205154101A8DB3B0F9DEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +214,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		446205154101A8DB3B0F9DEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Air Draw/Pods-Air Draw-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Air Draw/Pods-Air Draw-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74F28446D8923523E11873FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Air Draw-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		425175171EFD9CB700C6DD2B /* Sources */ = {
@@ -340,6 +414,7 @@
 		};
 		425175301EFD9CB700C6DD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D348C0C6E46D070CE5F5E83 /* Pods-Air Draw.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -360,6 +435,7 @@
 		};
 		425175311EFD9CB700C6DD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078409FF3E5DA08BCA3CEF63 /* Pods-Air Draw.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
