@@ -20,7 +20,7 @@
 		425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425175431EFDB6D000C6DD2B /* plus@2x.png */; };
 		42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BA3DC01EFECAA700A4039A /* stop@2x.png */; };
 		42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */; };
-		C426CC9D2418146B008F9E57 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426CC9C2418146B008F9E57 /* CreditsViewController.swift */; };
+		C4167D3524B38957006AD382 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C4167D3424B38957006AD382 /* video.mov */; };
 		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
 		C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4656191244D3AEA00BE0B61 /* NodeRender.metal */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 		42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
-		C426CC9C2418146B008F9E57 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		C4167D3424B38957006AD382 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
 		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +79,10 @@
 		4251751D1EFD9CB700C6DD2B /* AirDraw */ = {
 			isa = PBXGroup;
 			children = (
+				C4167D3424B38957006AD382 /* video.mov */,
 				425175321EFDA09100C6DD2B /* VertBrush.swift */,
 				425175221EFD9CB700C6DD2B /* ViewController.swift */,
 				4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */,
-				C426CC9C2418146B008F9E57 /* CreditsViewController.swift */,
 				425175341EFDA15400C6DD2B /* Metal */,
 				425175201EFD9CB700C6DD2B /* art.scnassets */,
 				425175241EFD9CB700C6DD2B /* Main.storyboard */,
@@ -176,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4167D3524B38957006AD382 /* video.mov in Resources */,
 				425175211EFD9CB700C6DD2B /* art.scnassets in Resources */,
 				425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */,
 				42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */,
@@ -196,7 +197,6 @@
 				4251753A1EFDA86200C6DD2B /* Shaders.metal in Sources */,
 				425175331EFDA09100C6DD2B /* VertBrush.swift in Sources */,
 				42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */,
-				C426CC9D2418146B008F9E57 /* CreditsViewController.swift in Sources */,
 				425175231EFD9CB700C6DD2B /* ViewController.swift in Sources */,
 				4251751F1EFD9CB700C6DD2B /* AppDelegate.swift in Sources */,
 				425175381EFDA76A00C6DD2B /* float4x4+Extensions.swift in Sources */,

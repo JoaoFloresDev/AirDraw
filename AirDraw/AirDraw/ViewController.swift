@@ -13,8 +13,10 @@ import simd
 import Photos
 import StoreKit
 import Foundation
+
 //cool sounds
 //var vet = [1003, 1019, 1100, 1103, 1104,1108, 1130, 1163]
+
 var i = 1100
 func getRoundyButton(size: CGFloat = 100,
                      imageName : String,
@@ -270,22 +272,52 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     func openGalery() {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = ["public.image", "public.movie"]
         
         present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageView = editedImage
+            imagePicker.dismiss(animated: true, completion: nil)
+            showMenu()
         } else if let originalimage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView = originalimage
+            imagePicker.dismiss(animated: true, completion: nil)
+            showMenu()
         }
+        else {
+            let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
+            self.dismiss(animated: true, completion: nil)
+            
+            addTV(url: videoURL)
+        }
+    }
+    
+    func addTV(url: NSURL) {
+        let video = AVPlayer(url: url as URL)
         
-        imagePicker.dismiss(animated: true, completion: nil)
+        let scene = SCNScene(named: "art.scnassets/VerticalTV.scn")!
+        let tvNode = scene.rootNode.childNode(withName: "tv_node", recursively: true)
+        tvNode?.position = SCNVector3(0,0,0)
         
-        showMenu()
+        let tvScreenPlaneNode = tvNode?.childNode(withName: "screen", recursively: true)
+        let tvScreenPlaneNodeGeometry = tvScreenPlaneNode?.geometry as! SCNPlane
+       
+        let tvVideoNode = SKVideoNode(avPlayer: video)
+        let videoScene = SKScene(size: .init(width: tvScreenPlaneNodeGeometry.width*1000, height: tvScreenPlaneNodeGeometry.height*1000))
+        videoScene.addChild(tvVideoNode)
+        
+        tvVideoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2)
+        tvVideoNode.size = videoScene.size
+        
+        let tvScreenMaterial = tvScreenPlaneNodeGeometry.materials.first(where: { $0.name == "video" })
+        
+        tvScreenMaterial?.diffuse.contents = videoScene
+        
+        tvVideoNode.play()
+        self.sceneView.scene.rootNode.addChildNode(tvNode!)
     }
     
     func cropBounds(viewlayer: CALayer, cornerRadius: Float) {
