@@ -20,13 +20,13 @@
 		425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425175431EFDB6D000C6DD2B /* plus@2x.png */; };
 		42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BA3DC01EFECAA700A4039A /* stop@2x.png */; };
 		42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */; };
-		C4167D3524B38957006AD382 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C4167D3424B38957006AD382 /* video.mov */; };
+		C4167D3724B63B4C006AD382 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C4167D3624B63B4C006AD382 /* video.mov */; };
 		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
 		C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4656191244D3AEA00BE0B61 /* NodeRender.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4251751B1EFD9CB700C6DD2B /* Air Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Draw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw In  Air.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		425175201EFD9CB700C6DD2B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		425175221EFD9CB700C6DD2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
-		C4167D3424B38957006AD382 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
+		C4167D3624B63B4C006AD382 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
 		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +71,7 @@
 		4251751C1EFD9CB700C6DD2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4251751B1EFD9CB700C6DD2B /* Air Draw.app */,
+				4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 		4251751D1EFD9CB700C6DD2B /* AirDraw */ = {
 			isa = PBXGroup;
 			children = (
-				C4167D3424B38957006AD382 /* video.mov */,
+				C4167D3624B63B4C006AD382 /* video.mov */,
 				425175321EFDA09100C6DD2B /* VertBrush.swift */,
 				425175221EFD9CB700C6DD2B /* ViewController.swift */,
 				4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */,
@@ -134,7 +134,7 @@
 			);
 			name = "Air Draw";
 			productName = ARBrush;
-			productReference = 4251751B1EFD9CB700C6DD2B /* Air Draw.app */;
+			productReference = 4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4167D3524B38957006AD382 /* video.mov in Resources */,
+				C4167D3724B63B4C006AD382 /* video.mov in Resources */,
 				425175211EFD9CB700C6DD2B /* art.scnassets in Resources */,
 				425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */,
 				42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */,
@@ -343,15 +343,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 6;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Draw In  Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,14 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 6;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Draw In  Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

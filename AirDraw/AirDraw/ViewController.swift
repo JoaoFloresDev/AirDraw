@@ -13,6 +13,8 @@ import simd
 import Photos
 import StoreKit
 import Foundation
+import AVFoundation
+import AVKit
 
 //cool sounds
 //var vet = [1003, 1019, 1100, 1103, 1104,1108, 1130, 1163]
@@ -295,73 +297,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         }
     }
     
-    func addTV(url: NSURL) {
-        let video = AVPlayer(url: url as URL)
-        
-        let scene = SCNScene(named: "art.scnassets/VerticalTV.scn")!
-        let tvNode = scene.rootNode.childNode(withName: "tv_node", recursively: true)
-        tvNode?.position = SCNVector3(0,0,0)
-        
-        let tvScreenPlaneNode = tvNode?.childNode(withName: "screen", recursively: true)
-        let tvScreenPlaneNodeGeometry = tvScreenPlaneNode?.geometry as! SCNPlane
-       
-        let tvVideoNode = SKVideoNode(avPlayer: video)
-        let videoScene = SKScene(size: .init(width: tvScreenPlaneNodeGeometry.width*1000, height: tvScreenPlaneNodeGeometry.height*1000))
-        videoScene.addChild(tvVideoNode)
-        
-        tvVideoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2)
-        tvVideoNode.size = videoScene.size
-        
-        let tvScreenMaterial = tvScreenPlaneNodeGeometry.materials.first(where: { $0.name == "video" })
-        
-        tvScreenMaterial?.diffuse.contents = videoScene
-        
-        tvVideoNode.play()
-        self.sceneView.scene.rootNode.addChildNode(tvNode!)
-    }
-    
-    func cropBounds(viewlayer: CALayer, cornerRadius: Float) {
-        
-        let imageLayer = viewlayer
-        imageLayer.cornerRadius = CGFloat(cornerRadius)
-        imageLayer.masksToBounds = true
-    }
-    
-    func showMenu() {
-        
-        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        let ResetGame = UIAlertAction(title: "x 1", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 1, cornerRadius: 1)
-        })
-        
-        let GoOrdemDasCartas = UIAlertAction(title: "x 5", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
-        })
-        
-        let EditAction = UIAlertAction(title: "x 10", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
-        })
-        
-        let EditAction2 = UIAlertAction(title: "x 15", style: .default, handler: { (action) -> Void in
-            self.plotImage (image: self.imageView, size: 12, cornerRadius: 1)
-        })
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
-            print("cancel action")
-        })
-        
-        optionMenu.addAction(ResetGame)
-        optionMenu.addAction(GoOrdemDasCartas)
-        optionMenu.addAction(EditAction)
-        optionMenu.addAction(EditAction2)
-        optionMenu.addAction(cancel)
-        
-        self.present(optionMenu, animated: true, completion: nil)
-        
-        
-    }
-    
     func plotImage (image: UIImage, size: CGFloat, cornerRadius: CGFloat) {
         guard let currentFrame = sceneView.session.currentFrame else {
             return
@@ -410,6 +345,92 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         planeNode.simdTransform = transform
         
         sceneView.scene.rootNode.addChildNode(planeNode)
+    }
+    
+    func addTV(url: NSURL) {
+        
+        let video = AVPlayer(url: url as URL)
+        loopVideo(videoPlayer: video)
+        
+        var scene = SCNScene(named: "art.scnassets/VerticalTV.scn")!
+        
+        if let sizeVideo = resolutionSizeForLocalVideo(url: url) {
+            if(sizeVideo.height < sizeVideo.width) {
+                scene = SCNScene(named: "art.scnassets/tv.scn")!
+            }
+        }
+        
+        let tvNode = scene.rootNode.childNode(withName: "tv_node", recursively: true)
+        let tvScreenPlaneNode = tvNode?.childNode(withName: "screen", recursively: true)
+        
+        let tvScreenPlaneNodeGeometry = tvScreenPlaneNode?.geometry as! SCNPlane
+        let tvVideoNode = SKVideoNode(avPlayer: video)
+        let videoScene = SKScene(size: .init(width: tvScreenPlaneNodeGeometry.width*1000, height: tvScreenPlaneNodeGeometry.height*1000))
+        videoScene.addChild(tvVideoNode)
+        tvVideoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2)
+        tvVideoNode.size = videoScene.size
+        let tvScreenMaterial = tvScreenPlaneNodeGeometry.materials.first(where: { $0.name == "video" })
+        tvScreenMaterial?.diffuse.contents = videoScene
+        
+        tvNode?.position = self.sceneView.pointOfView?.position as! SCNVector3
+        tvNode?.eulerAngles.y = self.sceneView.pointOfView?.eulerAngles.y as! Float + 180
+        tvVideoNode.play()
+        self.sceneView.scene.rootNode.addChildNode(tvNode!)
+    }
+    
+    func loopVideo(videoPlayer: AVPlayer) {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
+            videoPlayer.seek(to: kCMTimeZero)
+            videoPlayer.play()
+        }
+    }
+    
+    func resolutionSizeForLocalVideo(url:NSURL) -> CGSize? {
+        guard let track = AVAsset(url: url as URL).tracks(withMediaType: AVMediaType.video).first else { return nil }
+        let size = track.naturalSize.applying(track.preferredTransform)
+        return CGSize(width: fabs(size.width), height: fabs(size.height))
+    }
+    
+    func cropBounds(viewlayer: CALayer, cornerRadius: Float) {
+        
+        let imageLayer = viewlayer
+        imageLayer.cornerRadius = CGFloat(cornerRadius)
+        imageLayer.masksToBounds = true
+    }
+    
+    func showMenu() {
+        
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let ResetGame = UIAlertAction(title: "x 1", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 1, cornerRadius: 1)
+        })
+        
+        let GoOrdemDasCartas = UIAlertAction(title: "x 5", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
+        })
+        
+        let EditAction = UIAlertAction(title: "x 10", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 4, cornerRadius: 1)
+        })
+        
+        let EditAction2 = UIAlertAction(title: "x 15", style: .default, handler: { (action) -> Void in
+            self.plotImage (image: self.imageView, size: 12, cornerRadius: 1)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+            print("cancel action")
+        })
+        
+        optionMenu.addAction(ResetGame)
+        optionMenu.addAction(GoOrdemDasCartas)
+        optionMenu.addAction(EditAction)
+        optionMenu.addAction(EditAction2)
+        optionMenu.addAction(cancel)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+        
+        
     }
     
     //    MARK: - EXPORT VIDEO AND IMAGES FUNCTIONS
