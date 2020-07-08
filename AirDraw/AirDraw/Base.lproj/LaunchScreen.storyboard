@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgLandscape3" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-uW-8Ol">
-                                <rect key="frame" x="-393" y="0.0" width="1200" height="896"/>
+                                <rect key="frame" x="-779" y="448" width="1972" height="448"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="Vro-9l-s2A">
                                 <rect key="frame" x="40" y="281" width="334" height="334"/>
@@ -31,10 +31,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qEh-uW-8Ol" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Gv7-5o-XLh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vro-9l-s2A" secondAttribute="trailing" constant="20" id="GxL-ih-u4W"/>
                             <constraint firstItem="qEh-uW-8Ol" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QJk-zz-Krf"/>
-                            <constraint firstItem="qEh-uW-8Ol" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="Trz-Eu-Ysa"/>
+                            <constraint firstItem="qEh-uW-8Ol" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="Trz-Eu-Ysa"/>
+                            <constraint firstAttribute="bottom" secondItem="qEh-uW-8Ol" secondAttribute="bottom" id="VZ6-X8-q4f"/>
                             <constraint firstItem="Vro-9l-s2A" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="20" id="lqD-M3-Mhw"/>
                             <constraint firstItem="Vro-9l-s2A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xH0-ii-s6C"/>
                         </constraints>
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bgLandscape3" width="1200" height="1200"/>
-        <image name="iconLandscape" width="968" height="968"/>
+        <image name="bgLandscape3" width="1972" height="1674"/>
+        <image name="iconLandscape" width="862" height="862"/>
     </resources>
 </document>

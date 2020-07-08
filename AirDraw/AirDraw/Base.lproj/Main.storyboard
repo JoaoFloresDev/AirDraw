@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="gEQ-Ua-DZF">
             <objects>
-                <viewController id="QDX-re-qoL" customClass="ViewController" customModule="Air_Draw" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QDX-re-qoL" customClass="ViewController" customModule="Draw_In_Air" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQW-bq-hnT"/>
                         <viewControllerLayoutGuide type="bottom" id="5xU-9E-j0L"/>
