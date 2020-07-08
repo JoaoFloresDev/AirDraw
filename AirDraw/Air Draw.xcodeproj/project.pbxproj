@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw In  Air.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4251751B1EFD9CB700C6DD2B /* Draw In Air.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Draw In Air.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		425175201EFD9CB700C6DD2B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		425175221EFD9CB700C6DD2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		4251751C1EFD9CB700C6DD2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */,
+				4251751B1EFD9CB700C6DD2B /* Draw In Air.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 			);
 			name = "Air Draw";
 			productName = ARBrush;
-			productReference = 4251751B1EFD9CB700C6DD2B /* Draw In  Air.app */;
+			productReference = 4251751B1EFD9CB700C6DD2B /* Draw In Air.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -351,7 +351,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 6;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
-				PRODUCT_NAME = "Draw In  Air";
+				PRODUCT_NAME = "Draw In Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +370,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 6;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
-				PRODUCT_NAME = "Draw In  Air";
+				PRODUCT_NAME = "Draw In Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
