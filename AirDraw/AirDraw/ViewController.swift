@@ -16,6 +16,8 @@ import Foundation
 import AVFoundation
 import AVKit
 
+import GoogleMobileAds
+
 //cool sounds
 //var vet = [1003, 1019, 1100, 1103, 1104,1108, 1130, 1163]
 
@@ -66,7 +68,7 @@ extension String {
     
 }
 
-class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, GADInterstitialDelegate {
     
     //    MARK: - IBOutlet
     @IBOutlet var sceneView: ARSCNView!
@@ -107,12 +109,17 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     
     var avgPos : SCNVector3! = nil
     
-    
+    var interstitial: GADInterstitial!
     // MARK: - OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        ads
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8858389345934911/3254547941")
+        let request = GADRequest()
+        interstitial.load(request)
+        interstitial.delegate = self
+//        ---
         sceneView.delegate = self
         
         let scene = SCNScene(named: "art.scnassets/world.scn")!
@@ -246,6 +253,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         }
     }
     
+    
     @IBAction func clearAll(_ sender: Any) {
         AudioServicesPlaySystemSound(1522)
         AudioServicesPlaySystemSound(1520)
@@ -254,6 +262,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
         for x in sceneView.scene.rootNode.childNodes {
             x.removeFromParentNode()
         }
+        
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+      let interstitial = GADInterstitial(adUnitID: "ca-app-pub-8858389345934911/3254547941")
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
+    }
+
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("dismiss!!!!!")
+      interstitial = createAndLoadInterstitial()
     }
     
     @IBAction func screenShot(_ sender: Any) {

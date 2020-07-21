@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24BA9240D9E039765E1CF758 /* Pods_Air_Draw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCC72B955D717112CBC4DB1 /* Pods_Air_Draw.framework */; };
 		4251751F1EFD9CB700C6DD2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251751E1EFD9CB700C6DD2B /* AppDelegate.swift */; };
 		425175211EFD9CB700C6DD2B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 425175201EFD9CB700C6DD2B /* art.scnassets */; };
 		425175231EFD9CB700C6DD2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425175221EFD9CB700C6DD2B /* ViewController.swift */; };
@@ -19,6 +20,11 @@
 		4251753A1EFDA86200C6DD2B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 425175391EFDA85F00C6DD2B /* Shaders.metal */; };
 		42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */; };
 		C4167D3724B63B4C006AD382 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C4167D3624B63B4C006AD382 /* video.mov */; };
+		C41FCFAA24C69B9F001ACD08 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA524C69B9F001ACD08 /* ProductCell.swift */; };
+		C41FCFAB24C69B9F001ACD08 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA624C69B9F001ACD08 /* DetailViewController.swift */; };
+		C41FCFAC24C69B9F001ACD08 /* RazeFaceProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA724C69B9F001ACD08 /* RazeFaceProducts.swift */; };
+		C41FCFAD24C69B9F001ACD08 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */; };
+		C41FCFAF24C69BC5001ACD08 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */; };
 		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
 		C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4656191244D3AEA00BE0B61 /* NodeRender.metal */; };
 /* End PBXBuildFile section */
@@ -39,9 +45,17 @@
 		42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
+		754CD7794FD89B47B81E732C /* Pods-Air Draw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Air Draw.release.xcconfig"; path = "Target Support Files/Pods-Air Draw/Pods-Air Draw.release.xcconfig"; sourceTree = "<group>"; };
+		9CCC72B955D717112CBC4DB1 /* Pods_Air_Draw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Air_Draw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4167D3624B63B4C006AD382 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
+		C41FCFA524C69B9F001ACD08 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		C41FCFA624C69B9F001ACD08 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C41FCFA724C69B9F001ACD08 /* RazeFaceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RazeFaceProducts.swift; sourceTree = "<group>"; };
+		C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
 		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
+		D19EF592BE61BD27F7768CEB /* Pods-Air Draw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Air Draw.debug.xcconfig"; path = "Target Support Files/Pods-Air Draw/Pods-Air Draw.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,18 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BA9240D9E039765E1CF758 /* Pods_Air_Draw.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24A55BD59C685EDD98A0ABD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CCC72B955D717112CBC4DB1 /* Pods_Air_Draw.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		425175121EFD9CB700C6DD2B = {
 			isa = PBXGroup;
 			children = (
 				42FB5BAF23D7AFF900B53DBD /* AirDraw.h */,
 				4251751D1EFD9CB700C6DD2B /* AirDraw */,
 				4251751C1EFD9CB700C6DD2B /* Products */,
+				B44C500F7B118353867A2095 /* Pods */,
+				24A55BD59C685EDD98A0ABD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +100,7 @@
 		4251751D1EFD9CB700C6DD2B /* AirDraw */ = {
 			isa = PBXGroup;
 			children = (
+				C41FCFA324C69B92001ACD08 /* purchase */,
 				C4167D3624B63B4C006AD382 /* video.mov */,
 				425175321EFDA09100C6DD2B /* VertBrush.swift */,
 				425175221EFD9CB700C6DD2B /* ViewController.swift */,
@@ -103,6 +129,27 @@
 			name = Metal;
 			sourceTree = "<group>";
 		};
+		B44C500F7B118353867A2095 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D19EF592BE61BD27F7768CEB /* Pods-Air Draw.debug.xcconfig */,
+				754CD7794FD89B47B81E732C /* Pods-Air Draw.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C41FCFA324C69B92001ACD08 /* purchase */ = {
+			isa = PBXGroup;
+			children = (
+				C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */,
+				C41FCFA624C69B9F001ACD08 /* DetailViewController.swift */,
+				C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */,
+				C41FCFA524C69B9F001ACD08 /* ProductCell.swift */,
+				C41FCFA724C69B9F001ACD08 /* RazeFaceProducts.swift */,
+			);
+			name = purchase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4251752F1EFD9CB700C6DD2B /* Build configuration list for PBXNativeTarget "Air Draw" */;
 			buildPhases = (
+				2732B22BB3A54EC588D004EC /* [CP] Check Pods Manifest.lock */,
 				425175171EFD9CB700C6DD2B /* Sources */,
 				425175181EFD9CB700C6DD2B /* Frameworks */,
 				425175191EFD9CB700C6DD2B /* Resources */,
+				2EF966918C8988B057E93176 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,18 +222,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2732B22BB3A54EC588D004EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Air Draw-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EF966918C8988B057E93176 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Air Draw/Pods-Air Draw-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Air Draw/Pods-Air Draw-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		425175171EFD9CB700C6DD2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41FCFAB24C69B9F001ACD08 /* DetailViewController.swift in Sources */,
+				C41FCFAD24C69B9F001ACD08 /* IAPHelper.swift in Sources */,
 				4251753A1EFDA86200C6DD2B /* Shaders.metal in Sources */,
 				425175331EFDA09100C6DD2B /* VertBrush.swift in Sources */,
 				42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */,
 				425175231EFD9CB700C6DD2B /* ViewController.swift in Sources */,
 				4251751F1EFD9CB700C6DD2B /* AppDelegate.swift in Sources */,
 				425175381EFDA76A00C6DD2B /* float4x4+Extensions.swift in Sources */,
+				C41FCFAA24C69B9F001ACD08 /* ProductCell.swift in Sources */,
 				425175371EFDA76700C6DD2B /* SCNVector3Extensions.swift in Sources */,
+				C41FCFAC24C69B9F001ACD08 /* RazeFaceProducts.swift in Sources */,
+				C41FCFAF24C69BC5001ACD08 /* MasterViewController.swift in Sources */,
 				C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +425,7 @@
 		};
 		425175301EFD9CB700C6DD2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D19EF592BE61BD27F7768CEB /* Pods-Air Draw.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -344,6 +446,7 @@
 		};
 		425175311EFD9CB700C6DD2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754CD7794FD89B47B81E732C /* Pods-Air Draw.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
