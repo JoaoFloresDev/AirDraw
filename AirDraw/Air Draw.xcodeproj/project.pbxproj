@@ -17,8 +17,6 @@
 		425175371EFDA76700C6DD2B /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425175361EFDA1B200C6DD2B /* SCNVector3Extensions.swift */; };
 		425175381EFDA76A00C6DD2B /* float4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425175351EFDA1B200C6DD2B /* float4x4+Extensions.swift */; };
 		4251753A1EFDA86200C6DD2B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 425175391EFDA85F00C6DD2B /* Shaders.metal */; };
-		425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425175431EFDB6D000C6DD2B /* plus@2x.png */; };
-		42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BA3DC01EFECAA700A4039A /* stop@2x.png */; };
 		42FB5BB623D9477200B53DBD /* MetalVideoRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */; };
 		C4167D3724B63B4C006AD382 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C4167D3624B63B4C006AD382 /* video.mov */; };
 		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
@@ -38,8 +36,6 @@
 		425175351EFDA1B200C6DD2B /* float4x4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4+Extensions.swift"; sourceTree = "<group>"; };
 		425175361EFDA1B200C6DD2B /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
 		425175391EFDA85F00C6DD2B /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		425175431EFDB6D000C6DD2B /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus@2x.png"; path = "images/plus@2x.png"; sourceTree = "<group>"; };
-		42BA3DC01EFECAA700A4039A /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop@2x.png"; path = "images/stop@2x.png"; sourceTree = "<group>"; };
 		42FB5BAD23D7AFB200B53DBD /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
 		42FB5BAF23D7AFF900B53DBD /* AirDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDraw.h; sourceTree = "<group>"; };
 		42FB5BB523D9477200B53DBD /* MetalVideoRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRecorder.swift; sourceTree = "<group>"; };
@@ -88,7 +84,6 @@
 				425175241EFD9CB700C6DD2B /* Main.storyboard */,
 				425175271EFD9CB700C6DD2B /* Assets.xcassets */,
 				425175291EFD9CB700C6DD2B /* LaunchScreen.storyboard */,
-				425175421EFDB6C900C6DD2B /* images */,
 				4251752C1EFD9CB700C6DD2B /* Info.plist */,
 			);
 			path = AirDraw;
@@ -106,15 +101,6 @@
 				425175351EFDA1B200C6DD2B /* float4x4+Extensions.swift */,
 			);
 			name = Metal;
-			sourceTree = "<group>";
-		};
-		425175421EFDB6C900C6DD2B /* images */ = {
-			isa = PBXGroup;
-			children = (
-				42BA3DC01EFECAA700A4039A /* stop@2x.png */,
-				425175431EFDB6D000C6DD2B /* plus@2x.png */,
-			);
-			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +164,6 @@
 			files = (
 				C4167D3724B63B4C006AD382 /* video.mov in Resources */,
 				425175211EFD9CB700C6DD2B /* art.scnassets in Resources */,
-				425175441EFDB6DC00C6DD2B /* plus@2x.png in Resources */,
-				42BA3DC11EFECAB300A4039A /* stop@2x.png in Resources */,
 				4251752B1EFD9CB700C6DD2B /* LaunchScreen.storyboard in Resources */,
 				425175281EFD9CB700C6DD2B /* Assets.xcassets in Resources */,
 				425175261EFD9CB700C6DD2B /* Main.storyboard in Resources */,
