@@ -74,6 +74,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tutorialAsset: UIButton!
     @IBOutlet weak var tutorialImage: UIImageView!
+    @IBOutlet weak var buyProButton: UIButton!
     
     //    MARK: - Variables
     var timerTutotial: Timer!
@@ -115,11 +116,19 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     override func viewDidLoad() {
         super.viewDidLoad()
 //        ads
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8858389345934911/3254547941")
-        let request = GADRequest()
-        interstitial.load(request)
-        interstitial.delegate = self
-//        ---
+        if(UserDefaults.standard.object(forKey: "NoAds.DIA") != nil) {
+            buyProButton.isHidden = true
+        }
+        else {
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-8858389345934911/3254547941")
+            let request = GADRequest()
+            interstitial.load(request)
+            interstitial.delegate = self
+            
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["bc9b21ec199465e69782ace1e97f5b79"]
+            buyProButton.layer.cornerRadius = 15
+        }
+        
         sceneView.delegate = self
         
         let scene = SCNScene(named: "art.scnassets/world.scn")!
@@ -263,8 +272,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
             x.removeFromParentNode()
         }
         
-        if interstitial.isReady {
-          interstitial.present(fromRootViewController: self)
+        if(UserDefaults.standard.object(forKey: "NoAds.DIA") == nil) {
+            if interstitial.isReady {
+              interstitial.present(fromRootViewController: self)
+            }
         }
     }
     
@@ -276,7 +287,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIGestureRecognizerDe
     }
 
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        print("dismiss!!!!!")
       interstitial = createAndLoadInterstitial()
     }
     

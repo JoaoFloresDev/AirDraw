@@ -6,6 +6,7 @@
 //  Copyright © 2020 Joao Flores. All rights reserved.
 //
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let defaults = UserDefaults.standard
-        defaults.set(true, forKey: "NoAds.DIA")
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        if (UserDefaults.standard.object(forKey: "FirtsUse") == nil) {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSignupVC")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            UserDefaults.standard.set(true, forKey: "FirtsUse")
+        }
         
         return true
     }

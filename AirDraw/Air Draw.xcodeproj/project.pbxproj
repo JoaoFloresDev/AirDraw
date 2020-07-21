@@ -25,6 +25,7 @@
 		C41FCFAC24C69B9F001ACD08 /* RazeFaceProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA724C69B9F001ACD08 /* RazeFaceProducts.swift */; };
 		C41FCFAD24C69B9F001ACD08 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */; };
 		C41FCFAF24C69BC5001ACD08 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */; };
+		C4501EB224C6B143006A0C8C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4501EB124C6B143006A0C8C /* WelcomeViewController.swift */; };
 		C4656192244D3AEA00BE0B61 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */; };
 		C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = C4656191244D3AEA00BE0B61 /* NodeRender.metal */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		C41FCFA724C69B9F001ACD08 /* RazeFaceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RazeFaceProducts.swift; sourceTree = "<group>"; };
 		C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		C4501EB124C6B143006A0C8C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C4656190244D3AEA00BE0B61 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
 		C4656191244D3AEA00BE0B61 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
 		D19EF592BE61BD27F7768CEB /* Pods-Air Draw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Air Draw.debug.xcconfig"; path = "Target Support Files/Pods-Air Draw/Pods-Air Draw.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		C41FCFA324C69B92001ACD08 /* purchase */ = {
 			isa = PBXGroup;
 			children = (
+				C4501EB124C6B143006A0C8C /* WelcomeViewController.swift */,
 				C41FCFAE24C69BC5001ACD08 /* MasterViewController.swift */,
 				C41FCFA624C69B9F001ACD08 /* DetailViewController.swift */,
 				C41FCFA824C69B9F001ACD08 /* IAPHelper.swift */,
@@ -287,6 +290,7 @@
 				C41FCFAC24C69B9F001ACD08 /* RazeFaceProducts.swift in Sources */,
 				C41FCFAF24C69BC5001ACD08 /* MasterViewController.swift in Sources */,
 				C4656193244D3AEA00BE0B61 /* NodeRender.metal in Sources */,
+				C4501EB224C6B143006A0C8C /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,13 +433,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7;
+				MARKETING_VERSION = 10;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
 				PRODUCT_NAME = "Draw In Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;
@@ -450,12 +454,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = NZC6LC8NWM;
 				INFOPLIST_FILE = AirDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7;
+				MARKETING_VERSION = 10;
 				PRODUCT_BUNDLE_IDENTIFIER = "joaoFlores.AR-Draw";
 				PRODUCT_NAME = "Draw In Air";
 				SWIFT_OBJC_BRIDGING_HEADER = AirDraw.h;

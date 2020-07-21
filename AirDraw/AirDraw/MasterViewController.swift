@@ -79,10 +79,10 @@ class MasterViewController: UIViewController {
     
     func confirmCheckmark() {
         DispatchQueue.main.async {
-            if(RazeFaceProducts.store.isProductPurchased("NoAds") || (UserDefaults.standard.object(forKey: "NoAds") != nil)) {
+            if(RazeFaceProducts.store.isProductPurchased("NoAds.DIA") || (UserDefaults.standard.object(forKey: "NoAds.DIA") != nil)) {
                 self.stopLoading()
                 self.buyLabel.text = "   ✓✓✓"
-                UserDefaults.standard.set(true, forKey:"NoAds")
+                UserDefaults.standard.set(true, forKey:"NoAds.DIA")
             }
         }
     }

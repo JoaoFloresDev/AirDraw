@@ -58,9 +58,9 @@ class WelcomeViewController: UIViewController {
     
     func confirmCheckmark() {
         DispatchQueue.main.async {
-            if(RazeFaceProducts.store.isProductPurchased("NoAds.iPhotos") || (UserDefaults.standard.object(forKey: "NoAds.iPhotos") != nil)) {
+            if(RazeFaceProducts.store.isProductPurchased("NoAds.DIA") || (UserDefaults.standard.object(forKey: "NoAds.DIA") != nil)) {
                 self.stopLoading()
-                UserDefaults.standard.set(true, forKey:"NoAds.iPhotos")
+                UserDefaults.standard.set(true, forKey:"NoAds.DIA")
                 self.showController()
             }
         }
